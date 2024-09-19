@@ -22,5 +22,8 @@
   "homepage": "https://github.com/GodWindows/stocks#readme",
   "devDependencies": {
     "electron": "^31.1.0"
+  },
+  "dependencies": {
+    "sqlite3": "^5.1.7"
   }
 }

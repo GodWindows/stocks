@@ -1,0 +1,7 @@
+- Make sure that the values entered in the form are valid (non-empty, the right type, not too long... etc)
+
+- Show an (top-positioned) Error Toast when the form entries are not valid. The js code is the oone which detect the invalid entries and trigger the toast
+
+- Creation of a product (with an amount of 1+) generate a transaction of BUYING and we"ll have a commentary of " first Creation"
+
+-Check the TIME ZONE of the database
