@@ -1,0 +1,17 @@
+.hidden {
+    display: none;
+  }
+  .form-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .roll-down {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease-out;
+  }
+  .active {
+    height: auto;
+  }

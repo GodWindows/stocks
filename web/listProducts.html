@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pharmacie Don De Dieu</title>
+  <script src="js/jquery-3.7.1.min.js" ></script>
+  <script src="js/toastr.min.js"></script>
+  <script src="js/font-awasome.js"></script>
+  <link rel="stylesheet" href="style/toastr.min.css" />
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/tailwindcss.css">
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-green-dark text-white shadow-md">
+    <div class="container mx-auto my-4 px-4 py-3 flex justify-between items-center">
+      <h1 class="text-2xl font-bold"><a href="index.html">Pharmacie Don De Dieu</a></h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="index.html" class="hover:underline">Créer un nouveau produit</a></li>
+          <li><a href="listProducts.html" class="hover:underline">Catalogue</a></li>
+          <li><a href="list-transactions.html" class="hover:underline">Transactions</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-6 flex-grow">
+    <h1 class="text-3xl font-bold mb-6 text-center" style="color: #064e3b;">Catalogue</h1>
+
+    <div class=" mx-auto bg-white p-6 rounded-lg shadow-lg">
+      <label for="name" class="block text-gray-700 font-semibold mb-2">Rechercher</label>
+      <input type="text" id="search" class="w-full p-3 mb-4 border rounded-lg" required placeholder="Amoxicilline...">
+    </div>
+
+    <table id="productsTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Prix</th>
+                <th>Stocks</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Les lignes seront rajoutées ici -->
+        </tbody>
+    </table>
+  </main>
+
+<!-- Transaction Modal HTML -->
+<div id="saleModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+  <div class="bg-white rounded-lg shadow-lg w-1/3 p-6">
+    <h2 class="text-xl font-bold mb-4 text-center" style="color: #064e3b;" id="modalTitle"></h2>
+    <form id="saleForm">
+      <div class="mb-4">
+        <label for="modalPrice" class="block font-semibold">Prix</label>
+        <input type="number" id="modalPrice" class="w-full p-2 border rounded-md" required>
+      </div>
+      <div class="mb-4">
+        <label for="modalQty" class="block font-semibold">Quantité</label>
+        <input type="number" id="modalQty" class="w-full p-2 border rounded-md" required>
+      </div>
+      <div class="mb-4">
+        <label for="modalComments" class="block font-semibold">Commentaires</label>
+        <textarea id="modalComments" class="w-full p-2 border rounded-md" rows="3"></textarea>
+      </div>
+      <div class="flex justify-end space-x-4">
+        <button type="button" id="closeModal" class="bg-gray-300 px-4 py-2 rounded-md hover:bg-gray-400">Annuler</button>
+        <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+<!-- Edit Modal HTML -->
+<div id="editModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+  <div class="bg-white rounded-lg shadow-lg w-1/3 p-6">
+    <h2 class="text-xl font-bold mb-4 text-center" style="color: #064e3b;" id="editModalTitle"></h2>
+    <form id="editForm">
+      <div class="mb-4">
+        <label for="editModalName" class="block font-semibold">Nom</label>
+        <input type="text" id="editModalName" class="w-full p-2 border rounded-md" required>
+      </div>
+      <div class="mb-4">
+        <label for="editModalPrice" class="block font-semibold">Prix</label>
+        <input type="number" id="editModalPrice" class="w-full p-2 border rounded-md" required>
+      </div>
+      <div class="flex justify-end space-x-4">
+        <button type="button" id="closeEditModal" class="bg-gray-300 px-4 py-2 rounded-md hover:bg-gray-400">Annuler</button>
+        <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+  <!-- Footer -->
+  <footer class="bg-green-dark text-white py-4 mt-auto">
+    <div class="container mx-auto my-4 text-center">
+      <p>&copy; 2025 Audiovisuel Premium. Tous droits réservés.</p>
+    </div>
+  </footer>
+</body>
+<script src="js/products.js"></script>
+<script src="../renderer.js"></script>
+
+</html>

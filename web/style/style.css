@@ -1,0 +1,89 @@
+.bg-green-dark {
+    background-color: #064e3b;
+}
+
+.toast-message {
+    color: #fff !important;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #064e3b;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+td {
+    background-color: #fff;
+}
+
+tr:nth-child(even) td {
+    background-color: #f2f2f2;
+    /* Even rows */
+}
+
+tr:nth-child(odd) td {
+    background-color: #ffffff;
+    /* Odd rows */
+}
+
+tr:hover td {
+    background-color: #d9f2e6;
+    /* Hover effect */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    th,
+    td {
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}

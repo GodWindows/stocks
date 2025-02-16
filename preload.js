@@ -11,5 +11,12 @@ contextBridge.exposeInMainWorld('versions', {
 })
 
 contextBridge.exposeInMainWorld('tools', {
-  save: (data) => ipcRenderer.invoke('save', data )
+  saveProduct: (data) => ipcRenderer.invoke('saveProduct', data ),
+  updateProduct: (data) => ipcRenderer.invoke('saveProduct', data ),
+  saveTransaction: (data) => ipcRenderer.invoke('saveTransaction', data ),
+  fetchProducts: () => ipcRenderer.invoke('fetchProducts'),
+  fetchTransactions: () => ipcRenderer.invoke('fetchTransactions'),
+  getProductByID: (product_id) => ipcRenderer.invoke('getProductByID', product_id),
+  getProductsByName: (name) => ipcRenderer.invoke('getProductsByName', name),
+  updateProduct: (id, fieldToChange, oldValue, newValue, saveToLogs) => ipcRenderer.invoke('updateProduct', id, fieldToChange, oldValue, newValue, saveToLogs),
 })

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liste des Produits</title>    
+    <link href="css/output.css" rel="stylesheet">
+    <link href="css/list.css" rel="stylesheet"/>
+  </head>
+
+  <body class="bg-gray-100 p-8">
+    <!-- Product List -->
+    <div class="container mx-auto">
+      <h1 class="text-2xl font-bold mb-8">Liste des Produits</h1>
+
+      <!-- Product Rows -->
+      <div class="bg-white shadow-md rounded-lg p-6" id="product-list">
+        <!-- Product Row -->
+        <div class="product-row border-b border-gray-300 py-4">
+          <div class="flex justify-between items-center">
+            <div class="text-lg font-semibold">Produit 1</div>
+            <div>Stocks: <span class="text-gray-700">20</span></div>
+            <div>Prix: <span class="text-gray-700">15€</span></div>
+            <div class="flex gap-4">
+              <button class="edit-btn text-blue-500">
+                ✏️
+              </button>
+              <button class="buy-btn text-green-500">
+                ➕
+              </button>
+              <button class="sell-btn text-red-500">
+                💰
+              </button>
+            </div>
+          </div>
+
+          <!-- Edit Form (Hidden by default) -->
+          <div class="edit-form roll-down hidden mt-4">
+            <div class="form-container">
+              <input type="text" placeholder="Nom" class="p-2 border border-gray-300 rounded-md">
+              <input type="number" placeholder="Prix" class="p-2 border border-gray-300 rounded-md">
+              <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Modifier</button>
+            </div>
+          </div>
+
+          <!-- Buy Form (Hidden by default) -->
+          <div class="buy-form roll-down hidden mt-4">
+            <div class="form-container">
+              <input type="number" placeholder="Montant" class="p-2 border border-gray-300 rounded-md">
+              <input type="number" placeholder="Quantité" class="p-2 border border-gray-300 rounded-md">
+              <button class="bg-green-500 text-white px-4 py-2 rounded-md">Ajouter</button>
+            </div>
+          </div>
+
+          <!-- Sell Form (Hidden by default) -->
+          <div class="sell-form roll-down hidden mt-4">
+            <div class="form-container">
+              <input type="number" placeholder="Quantité" class="p-2 border border-gray-300 rounded-md">
+              <button class="bg-red-500 text-white px-4 py-2 rounded-md">Vendre</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat the above block for more products (example for 3 more products) -->
+        <!-- Product 2 -->
+        <div class="product-row border-b border-gray-300 py-4">
+          <div class="flex justify-between items-center">
+            <div class="text-lg font-semibold">Produit 2</div>
+            <div>Stocks: <span class="text-gray-700">35</span></div>
+            <div>Prix: <span class="text-gray-700">25€</span></div>
+            <div class="flex gap-4">
+              <button class="edit-btn text-blue-500">✏️</button>
+              <button class="buy-btn text-green-500">➕</button>
+              <button class="sell-btn text-red-500">➖</button>
+            </div>
+          </div>
+
+          <div class="edit-form roll-down hidden mt-4">
+            <div class="form-container">
+              <input type="text" placeholder="Nom" class="p-2 border border-gray-300 rounded-md">
+              <input type="number" placeholder="Prix" class="p-2 border border-gray-300 rounded-md">
+              <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Modifier</button>
+            </div>
+          </div>
+          <div class="buy-form roll-down hidden mt-4">
+            <div class="form-container">
+              <input type="number" placeholder="Montant" class="p-2 border border-gray-300 rounded-md">
+              <input type="number" placeholder="Quantité" class="p-2 border border-gray-300 rounded-md">
+              <button class="bg-green-500 text-white px-4 py-2 rounded-md">Ajouter</button>
+            </div>
+          </div>
+          <div class="sell-form roll-down hidden mt-4">
+            <div class="form-container">
+              <input type="number" placeholder="Quantité" class="p-2 border border-gray-300 rounded-md">
+              <button class="bg-red-500 text-white px-4 py-2 rounded-md">Vendre</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-row border-b border-gray-300 py-4">
+          <div class="flex justify-between items-center">
+            <div class="text-lg font-semibold">Produit 3</div>
+            <div>Stocks: <span class="text-gray-700">12</span></div>
+            <div>Prix: <span class="text-gray-700">8€</span></div>
+            <div class="flex gap-4">
+              <button class="edit-btn text-blue-500">✏️</button>
+              <button class="buy-btn text-green-500">➕</button>
+              <button class="sell-btn text-red-500">➖</button>
+            </div>
+          </div>
+
+          <div class="edit-form roll-down hidden mt-4">
+            <div class="form-container">
+              <input type="text" placeholder="Nom" class="p-2 border border-gray-300 rounded-md">
+              <input type="number" placeholder="Prix" class="p-2 border border-gray-300 rounded-md">
+              <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Modifier</button>
+            </div>
+          </div>
+          <div class="buy-form roll-down hidden mt-4">
+            <div class="form-container">
+              <input type="number" placeholder="Montant" class="p-2 border border-gray-300 rounded-md">
+              <input type="number" placeholder="Quantité" class="p-2 border border-gray-300 rounded-md">
+              <button class="bg-green-500 text-white px-4 py-2 rounded-md">Ajouter</button>
+            </div>
+          </div>
+          <div class="sell-form roll-down hidden mt-4">
+            <div class="form-container">
+              <input type="number" placeholder="Quantité" class="p-2 border border-gray-300 rounded-md">
+              <button class="bg-red-500 text-white px-4 py-2 rounded-md">Vendre</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-row py-4">
+          <div class="flex justify-between items-center">
+            <div class="text-lg font-semibold">Produit 4</div>
+            <div>Stocks: <span class="text-gray-700">50</span></div>
+            <div>Prix: <span class="text-gray-700">30€</span></div>
+            <div class="flex gap-4">
+              <button class="edit-btn text-blue-500">✏️</button>
+              <button class="buy-btn text-green-500">➕</button>
+              <button class="sell-btn text-red-500">➖</button>
+            </div>
+          </div>
+
+          <div class="edit-form roll-down hidden mt-4">
+            <div class="form-container">
+              <input type="text" placeholder="Nom" class="p-2 border border-gray-300 rounded-md">
+              <input type="number" placeholder="Prix" class="p-2 border border-gray-300 rounded-md">
+              <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Modifier</button>
+            </div>
+          </div>
+          <div class="buy-form roll-down hidden mt-4">
+            <div class="form-container">
+              <input type="number" placeholder="Montant" class="p-2 border border-gray-300 rounded-md">
+              <input type="number" placeholder="Quantité" class="p-2 border border-gray-300 rounded-md">
+              <button class="bg-green-500 text-white px-4 py-2 rounded-md">Ajouter</button>
+            </div>
+          </div>
+          <div class="sell-form roll-down hidden mt-4">
+            <div class="form-container">
+              <input type="number" placeholder="Quantité" class="p-2 border border-gray-300 rounded-md">
+              <button class="bg-red-500 text-white px-4 py-2 rounded-md">Vendre</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="js/list.js"></script>
+  </body>
+</html>

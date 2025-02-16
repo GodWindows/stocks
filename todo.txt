@@ -1,7 +1,40 @@
-- Make sure that the values entered in the form are valid (non-empty, the right type, not too long... etc)
+- Make sure that the values entered in the form are valid (non-empty, the right type, not too long..., right valur interval etc)
 
-- Show an (top-positioned) Error Toast when the form entries are not valid. The js code is the oone which detect the invalid entries and trigger the toast
+- Show an (top-positioned) Error Toast when the form entries are not valid. The js code is the one which detect the invalid entries and trigger the toast
 
 - Creation of a product (with an amount of 1+) generate a transaction of BUYING and we"ll have a commentary of " first Creation"
 
 -Check the TIME ZONE of the database
+
+- toast de validation à la création d'un produit
+
+
+
+
+Ajouter un produit ❤️
+
+Rechercher un produit (pour ensuite cliquer sur ACHAT, VENTE ou MODIFIER)✌️
+
+Visualiser la liste des produits avec les quantités présentes ❤️
+
+Modifier le produit (notamment le prix)✌️
+
+ACHAT --- > Rajouter des stocks d'un produit (en mettant le prix d'achat)✌️
+
+VENTE ---> Noter la vente d'un produit en mettant le prix de vente. ❤️
+
+CHACUNE DES TRANSACTIONS VENTES ET ACHATS SERONT NOTÉES AVEC LEURS COÛTS calculés automatiquement(et il y aura la possibilité de mettre un commentaire par ex : vente à 0f pour la Directrice...)✌️
+
+Mettre le seuil minimum d'alerte pénurie 
+
+Mettre plusieurs utilisateurs avec différents droits d'accès 
+
+Permettre a un super utilisateur d'enregistrer des utilisateurs 
+
+Noter les dates des transactions ❤️
+
+Garder les logs de toutes les modifications de prix✌️
+
+Visualiser le chiffre d'affaires par période ✌️
+
+Animation à l'ouverture de l'app ✌️

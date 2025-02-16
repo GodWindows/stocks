@@ -24,4 +24,15 @@ function add_product() {
 }
 
 
-document.getElementById("submit").addEventListener("click", add_product);
+document.getElementById('submit').addEventListener('click', function () {
+    const name = $('#name').val();
+    const amount = $('#amount').val();
+    const price = $('#price').val();
+
+    if (!name || amount < 0 || price < 0) {
+      alert('Veuillez remplir tous les champs correctement.');
+      return;
+    }
+    add_product();
+    alert(`Produit: ${name}\nQuantité: ${amount}\nPrix: ${price} FCFA`);
+  });
