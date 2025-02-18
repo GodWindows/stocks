@@ -156,7 +156,7 @@
       if (oldName!=newName) {
         tools.updateProduct(id, 'name', oldName, newName, true).then(
           ()=>{
-            toastr.success('Produit modifié !', '', { timeOut: 3000 });
+            toastr.success('Produit modifié !', '', { timeOut: 3000, positionClass: "toast-top-left"  });
             emptyList(); // Je vide la liste des produits pour l'actualiser
             (async () => {
               const response = await tools.fetchProducts();
@@ -168,7 +168,7 @@
       if (oldPrice!=newPrice) {
         tools.updateProduct(id, 'price', oldPrice, newPrice, true).then(
           ()=>{
-            toastr.success('Produit modifié !', '', { timeOut: 3000 });
+            toastr.success('Produit modifié !', '', { timeOut: 3000 , positionClass: "toast-top-left" });
             emptyList(); // Je vide la liste des produits pour l'actualiser
             (async () => {
               const response = await tools.fetchProducts();

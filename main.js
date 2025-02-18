@@ -2,6 +2,31 @@ const { app, BrowserWindow, ipcMain } = require('electron/main')
 const { log } = require('node:console')
 const path = require('node:path')
 const sqlite3 = require('sqlite3')
+const ftp = require("basic-ftp");
+require("dotenv").config();
+
+
+async function uploadFile() {
+  const client = new ftp.Client();
+  client.ftp.verbose = true;
+
+  try {
+      await client.access({
+          host: process.env.FTP_HOST,
+          user: process.env.FTP_USER,
+          password: process.env.FTP_PASS,
+          secure: false
+      });
+
+      await client.uploadFrom("db/stock.db", "stock.db");
+      console.log("Database uploaded and overwritten successfully!");
+  } catch (err) {
+      console.error("FTP upload failed:", err.message);
+  } finally {
+      client.close();
+  }
+}
+
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -13,7 +38,7 @@ const createWindow = () => {
   })
 
   win.loadFile('web/index.html')
-  win.webContents.openDevTools()
+  //win.webContents.openDevTools()
 }
 
 function saveProduct(data) {
@@ -41,7 +66,7 @@ function saveProduct(data) {
   
         // Insert into the transactions table after the product is added
         db.run(
-          'INSERT INTO transactions (product_id, transaction_type, price, quantity, commentary) VALUES (?, ?, ?, ?, ?)',
+          'INSERT INTO transactions (product_id, transaction_type, transaction_price, quantity, commentary) VALUES (?, ?, ?, ?, ?)',
           [product_id, 1, data.get('price'), data.get('amount'), 'CREATION DU PRODUIT'],
           (err) => {
             if (err) {
@@ -280,6 +305,7 @@ async function fetchTransactions() {
 
 
 app.whenReady().then(() => {
+  uploadFile().catch(() => console.log("Skipping upload due to network issues.")); //Update the db on the webserver on the app launch
   const dbname = 'db/stock.db';
   const db = new sqlite3.Database(dbname, (err) => {
     if (err) throw err;
@@ -315,6 +341,7 @@ app.whenReady().then(() => {
 })
 
 app.on('window-all-closed', () => {
+  uploadFile().catch(() => console.log("Skipping upload due to network issues.")); //Update the db on the webserver on the app closing. but is not working...why?
   if (process.platform !== 'darwin') app.quit()
 })
 

@@ -15,7 +15,7 @@ function add_product() {
         product.set('amount', amount);        
 
         save(product);
-        toastr.success('Produit ajouté !', '', { timeOut: 3000 });
+        toastr.success('Produit ajouté !', '', { timeOut: 3000, positionClass: "toast-top-left" });
 
         $("#name").val("");
         $("#amount").val("");

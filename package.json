@@ -34,6 +34,8 @@
     "electron": "^31.7.7"
   },
   "dependencies": {
+    "basic-ftp": "^5.0.5",
+    "dotenv": "^16.4.7",
     "electron-squirrel-startup": "^1.0.1",
     "sqlite3": "^5.1.7"
   }
